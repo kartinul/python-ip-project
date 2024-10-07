@@ -4,7 +4,7 @@ import pandas as pd
 
 series = pd.Series([10, 420, 521, 62, 46])
 
-print(f"series:\n{series}")
+print(f"series:\n\n{series}")
 breaker()
 print(f"series.size = {series.size}")
 print(f"series.shape = {series.shape}")

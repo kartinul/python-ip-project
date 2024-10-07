@@ -11,4 +11,4 @@ dict1 = {
 series = pd.Series(dict1)
 
 
-print(f"series:\n{series}")
+print(f"series:\n\n{series}")
