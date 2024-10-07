@@ -49,4 +49,3 @@ breaker()
 # Add column
 df["DateOfDeath"] = 2065
 print(f"Added column:\n\n{df}")
-breaker()
