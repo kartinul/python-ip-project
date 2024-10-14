@@ -90,7 +90,7 @@ printHeading("SELECT A NUMBER")
 for i, j in enumerate(validOptions.keys()):
     print(f"{i+1}. {j}")
 
-num = forceIntInput()
+num = forceIntInput(default=1)
 
 cls()
 
