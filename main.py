@@ -1,4 +1,4 @@
-from functions import breaker
+from functions import *
 import os
 
 
@@ -6,88 +6,92 @@ def runImport(toSearch):
     __import__(str(toSearch))
 
 
-def HandleQuestion():
-    print("CHOOSE YOUR QUESTION")
-    print()
-    for i, j in questions.items():
-        print(f"Q{i}. {j}")
+def forceIntInput(str=":: ", default=0):
+    try:
+        num = int(input(str))
+    except:
+        num = default
+        pass
 
-    questionNo = input(":: ")
+    return num
 
-    if questionNo in questions.keys():
-        os.system("cls")
+
+QUESTIONS = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Create a python program to display attributes of a series.",
+    "Creating python program using head() and tail() in series.",
+    "Creating a python program for creating a DataFrame using a nested list.",
+    "Creating a python program for creating a DataFrame using a dictionarty of lists.",
+    "Creating a python program for accessing values of rows and columns of a DataFrame.",
+    "Creating a python program to perform operations on a DataFrame(rename, count, update).",
+    "Creating a python program to filter the data of a Dataframe.",
+    "Creating a python program to display the attributes of the DataFrame.",
+    "Creating a python program to display the data of a DataFrame row-wise and column-wise using iterrow() and iteritems().",
+    "Creating a python program to perform writing and reading operations in a CSV file.",
+    "Creating a python program to plotting a line chart.",
+    "Creating a python program to plotting a bar chart from a CSV file.",
+    "Creating a python program to plotting a multiple bar chart from a CSV file.",
+    "Creating a python program to plotting Histogram.",
+]
+
+
+def HandleQuestion(type="Python"):
+    printHeading("CHOOSE YOUR QUESTION")
+    for i, j in enumerate(QUESTIONS):
+        print(f"Q{i+ 1}. {j}")
+
+    questionNoIndex = forceIntInput(":: ") - 1
+
+    if 0 < questionNoIndex <= len(QUESTIONS):
+        cls()
 
         breaker("=")
-        print(f"Q{questionNo}. {questions[questionNo]}")
+        print(f"Q{questionNoIndex + 1}. {QUESTIONS[questionNoIndex]}")
         breaker("=")
 
-        runImport(questionNo)
+        runImport(type + "." + str(questionNoIndex + 1))
         breaker("=")
+
+
+CSV_NAME = ["16w.csv", "16r.csv", "18.csv", "19.csv"]
 
 
 def HandleCSV():
-    print("CHOOSE YOUR FILE TO READ")
-    print()
-    for i in csv:
+    printHeading("CHOOSE YOUR FILE TO READ")
+    for i in CSV_NAME:
         print(f"* {i}")
 
     csvFile = input(":: ")
 
     csvFile = csvFile.split(".")[0] + ".csv"
 
-    if csvFile in csv:
-        os.system("cls")
+    if csvFile in CSV_NAME:
+        cls()
         breaker("=")
         print(csvFile)
         breaker("=")
 
-        with open(f"./{csvFile}", "r") as f:
+        with open(f"./CSV/{csvFile}", "r") as f:
             print(f.read())
 
         breaker("=")
 
 
-questions = {
-    "1": "",
-    "2": "",
-    "3": "",
-    "4": "",
-    "5": "",
-    "6": "",
-    "7": "Create a python program to display attributes of a series.",
-    "8": "Creating python program using head() and tail() in series.",
-    "9": "Creating a python program for creating a DataFrame using a nested list.",
-    "10": "Creating a python program for creating a DataFrame using a dictionarty of lists.",
-    "11": "Creating a python program for accessing values of rows and columns of a DataFrame.",
-    "12": "Creating a python program to perform operations on a DataFrame(rename, count, update).",
-    "13": "Creating a python program to filter the data of a Dataframe.",
-    "14": "Creating a python program to display the attributes of the DataFrame.",
-    "15": "Creating a python program to display the data of a DataFrame row-wise and column-wise using iterrow() and iteritems().",
-    "16": "Creating a python program to perform writing and reading operations in a CSV file.",
-    "17": "Creating a python program to plotting a line chart.",
-    "18": "Creating a python program to plotting a bar chart from a CSV file.",
-    "19": "Creating a python program to plotting a multiple bar chart from a CSV file.",
-    "20": "Creating a python program to plotting Histogram.",
-}
-
-csv = ["16w.csv", "16r.csv", "18.csv", "19.csv"]
-
-
 validOptions = {"Questions": HandleQuestion, "CSV": HandleCSV}
 
-os.system("cls")
+cls()
 
-print("SELECT A NUMBER")
-print("")
+printHeading("SELECT A NUMBER")
 for i, j in enumerate(validOptions.keys()):
     print(f"{i+1}. {j}")
 
-try:
-    num = int(input(":: "))
-except:
-    num = 0
-    pass
+num = forceIntInput()
 
-os.system("cls")
+cls()
 
 list(validOptions.values())[num - 1]()

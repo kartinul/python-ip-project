@@ -1,12 +1,14 @@
-from functions import breaker
+from functions import *
 import pandas as pd
 
 dic = {"name": ["a", "b", "c", "d"], "age": [42, 63, 12, 51]}
 df = pd.DataFrame(dic)
 
-print(f'df:\n\n{df}')
+printHeading("df")
+print(df)
 breaker()
-print(f"df.name:\n\n{df.name}")
+printHeading("df.name")
+print(df.name)
 breaker()
 print(f"df.size = {df.size}")
 print(f"df.shape = {df.shape}")

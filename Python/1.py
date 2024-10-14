@@ -1,3 +1,4 @@
+from functions import *
 import pandas as pd
 import numpy as np
 
@@ -9,4 +10,5 @@ series = pd.Series(array)
 # arraySelf = [2, 4, 6, 8, 10]
 # series = pd.Series(arraySelf)
 
-print(f"series:\n\n{series}")
+printHeading("series")
+print(series)

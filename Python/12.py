@@ -1,4 +1,4 @@
-from functions import breaker
+from functions import *
 import pandas as pd
 
 dic = {"name": ["a", "b", "c", "d"], "age": [42, 63, 12, 51]}
@@ -8,44 +8,61 @@ df = pd.DataFrame(dic, index=indexId)
 
 # Orginal Dataframe
 
-print(f"Orginal Dataframe:\n\n{df}")
+printHeading("Orginal Dataframe")
+print(df)
 breaker()
 
 # Rename column
 df = df.rename({"age": "currentAge"}, axis=1)
-print(f"Renamed Dataframe's Column:\n\n{df}")
+
+printHeading("Renamed Dataframe's Column")
+print(df)
 breaker()
 
 # Rename row
 df = df.rename({100: 110}, axis=0)
-print(f"Renamed Dataframe's Row:\n\n{df}")
+
+printHeading("Renamed Dataframe's Row")
+print(df)
 breaker()
 
 # Count function
-print(f"Count rows:\n\n{df.count(axis=0)}")
+
+printHeading("Count rows")
+print(df.count(axis=0))
 breaker()
 
 # Count function
-print(f"Count columns:\n\n{df.count(axis=1)}")
+
+printHeading("Count columns")
+print(df.count(axis=1))
 breaker()
 
 # Update
 toUpdate = pd.DataFrame({"currentAge": [17]}, index=[101])
 df.update(toUpdate)
-print(f"Updated Dataframe Value:\n\n{df}")
+
+printHeading("Updated Dataframe Value")
+print(df)
 breaker()
 
 # OR
 df.loc[101, "currentAge"] = 63
-print(f"Updated Dataframe Value:\n\n{df}")
+
+printHeading("Updated Dataframe Value")
+print(df)
 breaker()
 
 
 # Add row
 df.loc[104] = ["e", 18]
-print(f"Added row:\n\n{df}")
+
+printHeading("Added row")
+print(df)
 breaker()
 
 # Add column
 df["DateOfDeath"] = 2065
-print(f"Added column:\n\n{df}")
+
+printHeading("Added column")
+print(df)

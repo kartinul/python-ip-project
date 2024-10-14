@@ -1,3 +1,4 @@
+from functions import *
 import pandas as pd
 
 dict1 = {
@@ -11,4 +12,5 @@ dict1 = {
 series = pd.Series(dict1)
 
 
-print(f"series:\n\n{series}")
+printHeading("series")
+print(series)

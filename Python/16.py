@@ -1,15 +1,15 @@
-from functions import breaker
+from functions import *
 import pandas as pd
 
 print("READING...\n")
-dfr = pd.read_csv("./16r.csv")
+dfr = pd.read_csv("./CSV/16r.csv")
 print(dfr)
 
 breaker()
 
 print("READING and setting id as index...\n")
 # Default index_col = None
-dfrId = pd.read_csv("./16r.csv", index_col=0)
+dfrId = pd.read_csv("./CSV/16r.csv", index_col=0)
 print(dfrId)
 
 breaker()
@@ -21,4 +21,4 @@ print(dfw)
 print()
 print("WRITING...")
 
-dfw.to_csv("./16w.csv")
+dfw.to_csv("./CSV/16w.csv")
