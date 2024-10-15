@@ -17,12 +17,12 @@ def forceIntInput(str=":: ", default=0):
 
 
 QUESTIONS = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "Write a python program to create series first five even number.",
+    "Write a python program to create series of given tuple (11, 22, 33, 44, 55)",
+    "Create series from dict that stores classes (6,7,8,9,10) as key and number of students as value",
+    "Create a series by using np.array and find out index & size of series",
+    "Rename index 51 from (0,1,2,3) to  ('a', 'b', 'c', 'd')",
+    "Given two series s1, s2 find the {.given.code.}",
     "Create a python program to display attributes of a series.",
     "Creating python program using head() and tail() in series.",
     "Creating a python program for creating a DataFrame using a nested list.",
@@ -39,6 +39,22 @@ QUESTIONS = [
     "Creating a python program to plotting Histogram.",
 ]
 
+questionsSQL = {
+    1: "Create database company1",
+    2: "Create table Employee(EmpId, EmpName, DOJ, Salary, City, Email)",
+    3: "Add 5 records into table",
+    4: "Find out information of employees those salary is more than 50,000",
+    5: "Update City of 1st Employee",
+    6: "Delete last record from your table",
+    7: ["Math functions", ["Power", "(ii)Round", "(iii)Mod"]],
+    8: ["Convert EmpName to uppercase", "Apply mid() on emp_id"],
+    9: ["Find out date from DOJ", "Find out day name from DOJ"],
+    10: [
+        "Find out max and min salary from employee table",
+        "Count total employees those are coming from Vapi",
+    ],
+    11: "Make group of employees that are coming from same city",
+}
 
 def HandleQuestion(type="Python"):
     printHeading("CHOOSE YOUR QUESTION")
