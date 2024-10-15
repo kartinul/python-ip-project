@@ -13,3 +13,17 @@ def printHeading(str, end=":\n\n"):
 
 def cls():
     os.system("cls")
+
+
+def runImport(toSearch):
+    __import__(str(toSearch))
+
+
+def forceIntInput(str=":: ", default=0):
+    try:
+        num = int(input(str))
+    except:
+        num = default
+        pass
+
+    return num

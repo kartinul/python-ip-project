@@ -1,20 +1,6 @@
 from functions import *
 
 
-def runImport(toSearch):
-    __import__(str(toSearch))
-
-
-def forceIntInput(str=":: ", default=0):
-    try:
-        num = int(input(str))
-    except:
-        num = default
-        pass
-
-    return num
-
-
 QUESTIONS = {
     1: "Write a python program to create series first five even number.",
     2: "Write a python program to create series of given tuple (11, 22, 33, 44, 55)",
